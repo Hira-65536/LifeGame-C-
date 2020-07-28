@@ -35,7 +35,6 @@ int main()
         print_cells(*b,cnt);
         cnt++;
         step_cells(*b,*a);
-        //c=a;a=b;b=c;
     }
     return 0;
 }
@@ -44,7 +43,6 @@ void print_cells(int (&a)[MAP_HEIGHT][MAP_WIDTH],int cnt)
 {
     int x=1, y=1;
     int break_flag=0;
-    //int cells[MAP_HEIGHT][MAP_WIDTH]={{}};
     while(true)
     {
         if(x<=0)x=1;
@@ -80,10 +78,6 @@ void print_cells(int (&a)[MAP_HEIGHT][MAP_WIDTH],int cnt)
                     printf("™");
                 else
                     printf("%s",a[i][j]?"¡":" ");
-                /*if ((x == j) && (y == i))
-                    printf("@");
-                else
-                    printf("%d",lives_counter(a,j,i));*/
                 
             }
             printf("\n");
@@ -113,8 +107,6 @@ int lives_counter(int (&a)[MAP_HEIGHT][MAP_WIDTH],int _x, int _y){
 
             int loop_WIDTH = _x + x;
             int loop_HEIGHT = _y + y;
-            //int loop_WIDTH = (MAP_WIDTH + _x + x) % MAP_WIDTH;
-            //int loop_HEIGHT = (MAP_HEIGHT + _y + y) % MAP_HEIGHT;
             count += a[loop_HEIGHT][loop_WIDTH];
         }
     }
